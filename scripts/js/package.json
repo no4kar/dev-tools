@@ -1,0 +1,38 @@
+{
+  "name": "installable-cli-tool",
+  "version": "1.0.0",
+  "description": "an installable CLI tool written in Node.js",
+  "main": "index.js",
+  "type": "module",
+  "imports": {
+    "#root/*": "./*",
+    "#src/*": "./src/*",
+    "#types/*": "./src/types/*"
+  },
+  "bin": {
+    "treegen": "$npm_package_config_location_treegen"
+  },
+  "config": {
+    "location": {
+      "treegen": "./src/treegen/index.js"
+    }
+  },
+  "scripts": {
+    "treegen": "npx treegen --root=. --exclude=\"node_modules|public\" --outfile=./public/treegen.output.txt",
+    "prepare:treegen": "chmod +x $npm_package_config_location_treegen",
+    "location:treegen:cmd": "echo \"%npm_package_config_location_treegen%\"",
+    "location:treegen:bash": "echo \"$npm_package_config_location_treegen\"",
+    "location:treegen:node": "node -e \"console.log(process.env.npm_package_config_location_treegen)\"",
+    "npm-with-bash": "npm config set script-shell \"C:\\Program Files\\Git\\usr\\bin\\bash.exe\"",
+    "npm-with-cmd": "npm config set script-shell \"C:\\Windows\\System32\\cmd.exe\"",
+    "config:get:script-shell": "npm config get script-shell",
+    "config:get:all": "npm config list",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "n4k",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.6.0",
+    "eslint": "^9.6.0"
+  }
+}
