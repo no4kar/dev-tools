@@ -1,5 +1,4 @@
 
-````md
 # 🐙 Git Cheat Sheet
 
 Quick reference for common Git commands, aliases, and workflows.
@@ -64,8 +63,6 @@ alias.phom push origin main
 alias.plom pull origin main
 alias.ow commit --amend --no-edit
 ```
-
-````
 
 ---
 
