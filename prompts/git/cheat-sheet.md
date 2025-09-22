@@ -46,6 +46,25 @@ Quick reference for common Git commands, aliases, and workflows.
 git config --global --get-regexp alias
 git config --global alias.phom "push origin main"
 git config --global alias.ow '!git commit --amend --no-edit && git push --force'
+```
+
+```bash
+git config --global --get-regexp alias
+
+alias.ci commit
+alias.co checkout
+alias.br branch
+alias.st status
+alias.sw switch
+alias.lg log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches
+alias.rst-stgd restore --staged
+alias.phod push origin develop
+alias.plod pull origin develop
+alias.phom push origin main
+alias.plom pull origin main
+alias.ow commit --amend --no-edit
+```
+
 ````
 
 ---
@@ -163,6 +182,7 @@ git revert <commit>        # Undo a commit with a new commit
 ## 🌐 Sync with Remote
 
 ```bash
+git log HEAD..origin/main --oneline
 git fetch                       # Download refs/objects but don’t merge
 git pull --rebase origin main   # Rebase local branch onto remote
 git push -u origin main         # Push and set upstream
